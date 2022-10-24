@@ -1,9 +1,10 @@
-from flask import Blueprint
+from flask import render_template
 
-index_bp = Blueprint("index", __name__)
+from index import index_blueprint
 
-@index_bp.route("/", methods=["GET"])
-@index_bp.route("/index", methods=["GET"])
+
+@index_blueprint.route("/", methods=["GET"])
+@index_blueprint.route("/index", methods=["GET"])
 def index():
-    return "Olá, Mundo!"
+    return render_template("index.html")
     

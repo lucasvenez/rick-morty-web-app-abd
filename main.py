@@ -8,8 +8,8 @@ application.config.from_object("config.Config")
 
 db.init_app(application)
 
-from index.routes import index_bp
-application.register_blueprint(index_bp)
+from index.routes import index_blueprint
+application.register_blueprint(index_blueprint)
 
 from model import *
 
