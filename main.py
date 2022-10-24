@@ -11,6 +11,9 @@ db.init_app(application)
 from index.routes import index_blueprint
 application.register_blueprint(index_blueprint)
 
+from character.routes import character_blueprint
+application.register_blueprint(character_blueprint, url_prefix="/character")
+
 from model import *
 
 if __name__ == "__main__":
