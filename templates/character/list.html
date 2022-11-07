@@ -1,0 +1,29 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Criação</th>
+                    <th>Gender</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for character in characters %}
+                <tr>
+                    <td>{{ character.name }}</td>
+                    <td>{{ character.created }}</td>
+                    <td>{{ character.gender }}</td>
+                    <td>{{ character.status }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>    
+    </body>
+
+</html>

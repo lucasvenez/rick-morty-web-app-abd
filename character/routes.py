@@ -3,10 +3,16 @@ from flask import render_template
 from character import character_blueprint
 from character.forms import CharacterForm
 
+from model import Character
+
 
 @character_blueprint.route("/", methods=["GET"])
 def list_characters():
-    pass
+    characters = Character.query.all()
+    return render_template(
+        "character/list.html",
+        characters=characters
+    )
 
 
 @character_blueprint.route("/new", methods=["GET", "POST"])
